@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SorenCorp — Aplicaciones Móviles</title>
+  <title>SorenCorp — Mobile Apps</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e8e8e8; min-height: 100vh; }
-    header { background: #1a1a1a; border-bottom: 1px solid #2a2a2a; padding: 2rem 1.5rem; text-align: center; }
+    header { background: #1a1a1a; border-bottom: 1px solid #2a2a2a; padding: 2rem 1.5rem; text-align: center; position: relative; }
     header h1 { font-size: 2rem; font-weight: 700; }
     header p { color: #888; margin-top: 0.4rem; font-size: 0.95rem; }
+    .lang-toggle { position: absolute; top: 1.25rem; right: 1.5rem; display: flex; gap: 0; border: 1px solid #333; border-radius: 6px; overflow: hidden; }
+    .lang-toggle button { background: transparent; border: none; color: #888; padding: 0.35rem 0.65rem; font-size: 0.8rem; cursor: pointer; font-family: inherit; }
+    .lang-toggle button.active { background: #2a2a2a; color: #e8e8e8; font-weight: 600; }
+    .lang-toggle button:hover:not(.active) { background: #1f1f1f; color: #ccc; }
     main { max-width: 700px; margin: 3rem auto; padding: 0 1.5rem; }
     h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 1.5rem; }
     .apps { display: flex; flex-direction: column; gap: 1rem; }
@@ -29,83 +33,98 @@
 </head>
 <body>
   <header>
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
     <h1>SorenCorp</h1>
-    <p>Aplicaciones móviles para Android</p>
+    <p data-en="Mobile apps for Android" data-es="Aplicaciones móviles para Android">Mobile apps for Android</p>
   </header>
   <main>
-    <h2>Nuestras Apps</h2>
+    <h2 data-en="Our Apps" data-es="Nuestras Apps">Our Apps</h2>
     <div class="apps">
 
       <div class="app-card">
         <div class="app-info">
           <h3>Comparedex</h3>
-          <p>Comparador de estadísticas base de Pokémon</p>
+          <p data-en="Pokémon base stat comparison tool" data-es="Comparador de estadísticas base de Pokémon">Pokémon base stat comparison tool</p>
         </div>
         <div class="app-links">
           <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.comparedex" target="_blank">▶ Play Store</a>
-          <a class="btn-policy" href="comparedex/privacy-policy.html">Política de privacidad</a>
+          <a class="btn-policy" href="comparedex/privacy-policy.html" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-info">
           <h3>Sudoku</h3>
-          <p>Sudoku clásico con niveles de dificultad y récords</p>
+          <p data-en="Classic Sudoku with difficulty levels and records" data-es="Sudoku clásico con niveles de dificultad y récords">Classic Sudoku with difficulty levels and records</p>
         </div>
         <div class="app-links">
           <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.sudoku_game" target="_blank">▶ Play Store</a>
-          <a class="btn-policy" href="sudoku/privacy-policy.html">Política de privacidad</a>
+          <a class="btn-policy" href="sudoku/privacy-policy.html" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-info">
           <h3>Restricción Vehicular Pasto</h3>
-          <p>Consulta el pico y placa en Pasto, Colombia</p>
+          <p data-en="Vehicle restriction checker for Pasto, Colombia" data-es="Consulta el pico y placa en Pasto, Colombia">Vehicle restriction checker for Pasto, Colombia</p>
         </div>
         <div class="app-links">
           <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.pico_placa_pasto" target="_blank">▶ Play Store</a>
-          <a class="btn-policy" href="pico-placa-pasto/privacy-policy.html">Política de privacidad</a>
+          <a class="btn-policy" href="pico-placa-pasto/privacy-policy.html" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-info">
           <h3>¿Pueblo Real o Inventado?</h3>
-          <p>Quiz de municipios reales e inventados de Colombia</p>
+          <p data-en="Quiz: real or fictional Colombian municipalities" data-es="Quiz de municipios reales e inventados de Colombia">Quiz: real or fictional Colombian municipalities</p>
         </div>
         <div class="app-links">
           <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.pueblo_o_invento" target="_blank">▶ Play Store</a>
-          <a class="btn-policy" href="pueblo-o-invento/privacy-policy.html">Política de privacidad</a>
+          <a class="btn-policy" href="pueblo-o-invento/privacy-policy.html" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-info">
           <h3>SorenGBA</h3>
-          <p>Emulador de GBA con mGBA</p>
+          <p data-en="GBA emulator powered by mGBA" data-es="Emulador de GBA con mGBA">GBA emulator powered by mGBA</p>
         </div>
         <div class="app-links">
           <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.gba_emulator" target="_blank">▶ Play Store</a>
-          <a class="btn-policy" href="gba-emulator/privacy-policy.html">Política de privacidad</a>
+          <a class="btn-policy" href="gba-emulator/privacy-policy.html" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a>
         </div>
       </div>
 
       <div class="app-card">
         <div class="app-info">
           <h3>REST Client</h3>
-          <p>Cliente REST multiplataforma para probar APIs</p>
+          <p data-en="Cross-platform REST API testing tool" data-es="Cliente REST multiplataforma para probar APIs">Cross-platform REST API testing tool</p>
         </div>
         <div class="app-links">
           <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.rest_client" target="_blank">▶ Play Store</a>
-          <a class="btn-policy" href="rest-client/privacy-policy.html">Política de privacidad</a>
+          <a class="btn-policy" href="rest-client/privacy-policy.html" data-en="Privacy Policy" data-es="Política de privacidad">Privacy Policy</a>
         </div>
       </div>
 
     </div>
   </main>
   <footer>
-    <p>&copy; 2026 SorenCorp &mdash; Colombia &mdash; <a href="mailto:daveloper0+sorencorp@gmail.com">Contacto</a></p>
+    <p>&copy; 2026 SorenCorp &mdash; Colombia &mdash; <a href="mailto:daveloper0+sorencorp@gmail.com" data-en="Contact" data-es="Contacto">Contact</a></p>
   </footer>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-en]').forEach(el => {
+        el.textContent = el.dataset[lang];
+      });
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+    }
+  </script>
 </body>
 </html>
