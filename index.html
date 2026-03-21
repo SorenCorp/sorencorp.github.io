@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SorenCorp — Mobile Apps</title>
+  <title>SorenCorp — Aplicaciones Móviles</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e8e8e8; min-height: 100vh; }
@@ -13,12 +13,16 @@
     main { max-width: 700px; margin: 3rem auto; padding: 0 1.5rem; }
     h2 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 1.5rem; }
     .apps { display: flex; flex-direction: column; gap: 1rem; }
-    .app-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .app-card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
     .app-card:hover { border-color: #444; }
     .app-info h3 { font-size: 1rem; font-weight: 600; }
     .app-info p { font-size: 0.85rem; color: #888; margin-top: 0.2rem; }
-    .app-card a { font-size: 0.8rem; color: #6e9ef5; text-decoration: none; white-space: nowrap; margin-left: 1rem; }
-    .app-card a:hover { text-decoration: underline; }
+    .app-links { display: flex; flex-direction: column; align-items: flex-end; gap: 0.4rem; flex-shrink: 0; }
+    .app-links a { font-size: 0.8rem; text-decoration: none; white-space: nowrap; }
+    .btn-play { background: #e8e8e8; color: #0f0f0f; padding: 0.3rem 0.75rem; border-radius: 6px; font-weight: 600; }
+    .btn-play:hover { background: #fff; }
+    .btn-policy { color: #6e9ef5; }
+    .btn-policy:hover { text-decoration: underline; }
     footer { text-align: center; padding: 3rem 1.5rem; color: #555; font-size: 0.85rem; }
     footer a { color: #6e9ef5; text-decoration: none; }
   </style>
@@ -26,39 +30,82 @@
 <body>
   <header>
     <h1>SorenCorp</h1>
-    <p>Mobile apps for Android</p>
+    <p>Aplicaciones móviles para Android</p>
   </header>
   <main>
-    <h2>Our Apps</h2>
+    <h2>Nuestras Apps</h2>
     <div class="apps">
+
       <div class="app-card">
-        <div class="app-info"><h3>Comparedex</h3><p>Pokémon base stat comparison tool</p></div>
-        <a href="comparedex/privacy-policy.html">Privacy Policy</a>
+        <div class="app-info">
+          <h3>Comparedex</h3>
+          <p>Comparador de estadísticas base de Pokémon</p>
+        </div>
+        <div class="app-links">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.comparedex" target="_blank">▶ Play Store</a>
+          <a class="btn-policy" href="comparedex/privacy-policy.html">Política de privacidad</a>
+        </div>
       </div>
+
       <div class="app-card">
-        <div class="app-info"><h3>Sudoku</h3><p>Classic Sudoku with difficulty levels and records</p></div>
-        <a href="sudoku/privacy-policy.html">Privacy Policy</a>
+        <div class="app-info">
+          <h3>Sudoku</h3>
+          <p>Sudoku clásico con niveles de dificultad y récords</p>
+        </div>
+        <div class="app-links">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.sudoku_game" target="_blank">▶ Play Store</a>
+          <a class="btn-policy" href="sudoku/privacy-policy.html">Política de privacidad</a>
+        </div>
       </div>
+
       <div class="app-card">
-        <div class="app-info"><h3>Restricción Vehicular Pasto</h3><p>Pico y placa checker for Pasto, Colombia</p></div>
-        <a href="pico-placa-pasto/privacy-policy.html">Privacy Policy</a>
+        <div class="app-info">
+          <h3>Restricción Vehicular Pasto</h3>
+          <p>Consulta el pico y placa en Pasto, Colombia</p>
+        </div>
+        <div class="app-links">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.pico_placa_pasto" target="_blank">▶ Play Store</a>
+          <a class="btn-policy" href="pico-placa-pasto/privacy-policy.html">Política de privacidad</a>
+        </div>
       </div>
+
       <div class="app-card">
-        <div class="app-info"><h3>¿Pueblo Real o Inventado?</h3><p>Quiz de municipios de Colombia</p></div>
-        <a href="pueblo-o-invento/privacy-policy.html">Privacy Policy</a>
+        <div class="app-info">
+          <h3>¿Pueblo Real o Inventado?</h3>
+          <p>Quiz de municipios reales e inventados de Colombia</p>
+        </div>
+        <div class="app-links">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.pueblo_o_invento" target="_blank">▶ Play Store</a>
+          <a class="btn-policy" href="pueblo-o-invento/privacy-policy.html">Política de privacidad</a>
+        </div>
       </div>
+
       <div class="app-card">
-        <div class="app-info"><h3>SorenGBA</h3><p>GBA emulator powered by mGBA</p></div>
-        <a href="gba-emulator/privacy-policy.html">Privacy Policy</a>
+        <div class="app-info">
+          <h3>SorenGBA</h3>
+          <p>Emulador de GBA con mGBA</p>
+        </div>
+        <div class="app-links">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.gba_emulator" target="_blank">▶ Play Store</a>
+          <a class="btn-policy" href="gba-emulator/privacy-policy.html">Política de privacidad</a>
+        </div>
       </div>
+
       <div class="app-card">
-        <div class="app-info"><h3>REST Client</h3><p>Cross-platform REST API testing tool</p></div>
-        <a href="rest-client/privacy-policy.html">Privacy Policy</a>
+        <div class="app-info">
+          <h3>REST Client</h3>
+          <p>Cliente REST multiplataforma para probar APIs</p>
+        </div>
+        <div class="app-links">
+          <a class="btn-play" href="https://play.google.com/store/apps/details?id=com.sorencorp.rest_client" target="_blank">▶ Play Store</a>
+          <a class="btn-policy" href="rest-client/privacy-policy.html">Política de privacidad</a>
+        </div>
       </div>
+
     </div>
   </main>
   <footer>
-    <p>&copy; 2026 SorenCorp &mdash; Colombia &mdash; <a href="mailto:daveloper0+sorencorp@gmail.com">Contact</a></p>
+    <p>&copy; 2026 SorenCorp &mdash; Colombia &mdash; <a href="mailto:daveloper0+sorencorp@gmail.com">Contacto</a></p>
   </footer>
 </body>
 </html>
